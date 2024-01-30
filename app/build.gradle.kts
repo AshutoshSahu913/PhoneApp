@@ -57,4 +57,7 @@ dependencies {
     // To use Kotlin Symbol Processing (KSP)
     ksp("androidx.room:room-compiler:$roomVersion")
 
+    //to add image picker library
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
+
 }

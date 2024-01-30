@@ -15,8 +15,10 @@ object DbBuilder {
                 context,
                 ApnaDatabase::class.java,
                 dbName
-            ).setJournalMode(RoomDatabase.JournalMode.TRUNCATE).fallbackToDestructiveMigration()
-                .allowMainThreadQueries().build()
+            ).setJournalMode(RoomDatabase.JournalMode.TRUNCATE)
+                .fallbackToDestructiveMigration()
+                .allowMainThreadQueries()
+                .build()
         }
         return database
     }

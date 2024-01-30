@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color1"
+    android:background="@color/white"
     tools:context=".AddEditActivity">
 
 
@@ -16,7 +16,8 @@
         android:layout_marginTop="5dp"
         android:src="@drawable/left_arrow_svgrepo_com"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/appColor" />
 
 
     <androidx.cardview.widget.CardView
@@ -41,15 +42,16 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_marginEnd="9dp"
-        android:elevation="10dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,11 +68,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
 
+                android:id="@+id/editTxtLayoutName"
                 android:layout_width="match_parent"
-
                 android:layout_height="match_parent"
+                app:cursorColor="@color/appColor"
+                app:endIconMode="clear_text"
 
-                app:cursorColor="@color/appColor">
+
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/appColor">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputName"
@@ -82,14 +88,23 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:textColor="@color/appColor"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editTxtLayoutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                app:cursorColor="@color/appColor">
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:counterTextColor="@color/appColor"
+                app:cursorColor="@color/appColor"
+
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/appColor"
+                app:prefixText="+91"
+                app:prefixTextColor="@color/appColor">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputPhone"
@@ -102,7 +117,7 @@
                     android:maxLength="10"
                     android:maxLines="1"
                     android:textColor="@color/appColor"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -121,28 +136,31 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:textColor="@color/appColor"
-                    android:textSize="18sp" />
+                    android:textSize="15sp" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/white"
+                android:elevation="2dp"
+                android:fontFamily="@font/oswald_semibold"
+                android:padding="5dp"
+                android:text="Save Information"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/materialCardView"
+                app:layout_constraintStart_toStartOf="@+id/materialCardView"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView"
+                app:rippleColor="@color/appColor" />
+
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/saveBtn"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:backgroundTint="@color/color2"
-        android:fontFamily="@font/oswald_semibold"
-        android:text="Save Information"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-
-        app:layout_constraintEnd_toEndOf="@+id/materialCardView"
-        app:layout_constraintStart_toStartOf="@+id/materialCardView"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-        app:rippleColor="@color/appColor" />
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
